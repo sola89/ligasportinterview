@@ -13,28 +13,28 @@
         <div class="col-4">
           <div class="image">
             <q-img
-              :src="lib[0].data.general.image.url"
-              :title="lib[0].data.general.image.title"
+              :src="lib.data.general.image.url"
+              :title="lib.data.general.image.title"
               contain
             >
             </q-img>
           </div>
           <div class="text-subtitle2 top-tags">
-            <q-badge class="q-mr-sm" outline color="primary" :label="tag.name" v-for="tag in lib[0].data.general.tags" :key="tag.id" />
+            <q-badge class="q-mr-sm" outline color="primary" :label="tag.name" v-for="tag in lib.data.general.tags" :key="tag.id" />
           </div>
         </div>
         <div class="col">
-          <h4 class="h3 title">{{ lib[0].data.general.name }}</h4>
-          <p class="description" v-html="lib[0].data.general.description"></p>
+          <h4 class="h3 title">{{ lib.data.general.name }}</h4>
+          <p class="description" v-html="lib.data.general.description"></p>
           <ul>
-            <li v-if="lib[0].data.general.contacts.website">
-             <a :href="lib[0].data.general.contacts.website"> <q-icon name="language" /> &nbsp;{{ lib[0].data.general.contacts.website }}</a>
+            <li v-if="lib.data.general.contacts.website">
+             <a :href="lib.data.general.contacts.website"> <q-icon name="language" /> &nbsp;{{ lib.data.general.contacts.website }}</a>
             </li>
-            <li v-if="lib[0].data.general.contacts.email">
-             <a :href="`mailto://${lib[0].data.general.contacts.email}`"> <q-icon name="email" /> &nbsp;{{ lib[0].data.general.contacts.email }}</a>
+            <li v-if="lib.data.general.contacts.email">
+             <a :href="`mailto://${lib.data.general.contacts.email}`"> <q-icon name="email" /> &nbsp;{{ lib.data.general.contacts.email }}</a>
             </li>
-            <li v-if="lib[0].data.general.contacts.phones[0].value">
-             <a :href="`tel:${lib[0].data.general.contacts.phones[0].value}`"> <q-icon name="phone" /> &nbsp;{{ lib[0].data.general.contacts.phones[0].value }}</a>
+            <li v-if="lib.data.general.contacts.phones.value">
+             <a :href="`tel:${lib.data.general.contacts.phones.value}`"> <q-icon name="phone" /> &nbsp;{{ lib.data.general.contacts.phones.value }}</a>
             </li>
           </ul>
           <div class="ymap">
@@ -77,6 +77,11 @@ export default {
       }
     }
   },
+  meta () {
+    return {
+      title: this.libName
+    }
+  },
   components: {
     yandexMap,
     ymapMarker
@@ -89,10 +94,10 @@ export default {
       return this.getLibById(this.$route.params.id)
     },
     libName () {
-      return this.lib[0].data.general.name
+      return this.lib.data.general.name
     },
     libCoords () {
-      return [this.lib[0].data.general.address.mapPosition.coordinates[1], this.lib[0].data.general.address.mapPosition.coordinates[0]]
+      return [this.lib.data.general.address.mapPosition.coordinates[1], this.lib.data.general.address.mapPosition.coordinates[0]]
     }
   }
 }

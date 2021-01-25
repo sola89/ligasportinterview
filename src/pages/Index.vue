@@ -9,6 +9,9 @@
 <script>
 import Libs from 'src/components/Libs'
 export default {
+  meta: {
+    title: 'Список библиотек'
+  },
   name: 'Index',
   components: { Libs }
 }

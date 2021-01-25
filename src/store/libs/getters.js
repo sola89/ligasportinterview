@@ -3,7 +3,7 @@ export function getLibs (state) {
 }
 
 export const getLibById = (state) => (id) => {
-  return state.libs.filter(item => item.data.general.id === Number(id))
+  return state.libs.find(item => item.data.general.id === Number(id))
 }
 
 export const getLibsByTag = (state) => (tagName) => {

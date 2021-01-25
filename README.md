@@ -2,6 +2,8 @@
 
 its liga sport test task
 
+Список библиотек. Доступен детальный вид, и сортировка по тегам (нужно нажать на тег)
+
 ## Install the dependencies
 ```bash
 yarn
@@ -9,7 +11,7 @@ yarn
 
 ### Start the app in development mode (hot-code reloading, error reporting, etc.)
 ```bash
-quasar dev
+yarn dev
 ```
 
 ### Lint the files
@@ -25,3 +27,4 @@ quasar build
 ### Customize the configuration
 See [Configuring quasar.conf.js](https://quasar.dev/quasar-cli/quasar-conf-js).
 # ligasportinterview
+

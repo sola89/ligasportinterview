@@ -1,6 +1,8 @@
 <template>
   <q-page padding>
-    <Libs />
+    <div class="mini-container">
+      <Libs />
+    </div>
   </q-page>
 </template>
 
@@ -11,3 +13,11 @@ export default {
   components: { Libs }
 }
 </script>
+
+<style lang=sass>
+  .mini-container
+    max-width: 1200px
+    margin: 30px auto
+    background: #fff
+    padding: 25px
+</style>

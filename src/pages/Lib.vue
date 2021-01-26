@@ -10,7 +10,7 @@
     </div>
     <div class="q-pa-md">
       <div class="row">
-        <div class="col-4">
+        <div class="col-12 col-md-4">
           <div class="image">
             <q-img
               :src="lib.data.general.image.url"
@@ -23,7 +23,7 @@
             <q-badge class="q-mr-sm" outline color="primary" :label="tag.name" v-for="tag in lib.data.general.tags" :key="tag.id" />
           </div>
         </div>
-        <div class="col">
+        <div class="col-12 col-md-8">
           <h4 class="h3 title">{{ lib.data.general.name }}</h4>
           <p class="description" v-html="lib.data.general.description"></p>
           <ul>
